@@ -19,16 +19,16 @@ function changeIndex(index) {
 </script>
 
 <template>
-    <main class="h-screen flex justify-center items-center">
-        <section class="bg-blue-300 w-full max-w-xl flex flex-col gap-4 p-3">
+    <main class="h-screen w-full flex justify-center items-center">
+        <section class="bg-blue-300 w-full w-5xl flex flex-col gap-4 p-3">
             <div class="flex flex-col gap-2" v-for="(tema, index) in temas">
-                <button @click="changeIndex(index)" class="bg-blue-100 flex  justify-between px-5 py-2 select-none">
+                <button @click="changeIndex(index)" class="bg-blue-100 flex  justify-around px-5 py-2 select-none">
                     <p>
                         {{ tema.title }}
                     </p>
 
-                    <p v-if="index != indice">X</p>
-                    <p v-else>-</p>
+                    <p class="text-xl" v-if="index != indice">+</p>
+                    <p class="text-2xl" v-else>-</p>
                 </button>
 
                 <div class="min-h-40 bg-slate-100 p-4" v-if="index == indice">
